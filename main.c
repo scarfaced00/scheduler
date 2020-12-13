@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	
 	//1. FILE pointer open & error handling
 	//fill code here ----
-	if((fp=open(file,"r"))==NULL)
+	if((fp=open("schedule.dat","r"))==NULL)
 	{
 		printf("input file name is invalid\n");
 		return -1;
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	//fill code here ---- close the file pointer
-	close(fp);
+	fclose(fp);
 	printf("Read done! %i schedules are read\n", list_len(list));
 	
 	
@@ -72,6 +72,9 @@ int main(int argc, char *argv[]) {
 				ndPtr = list;
 				while (list_isEndNode(ndPtr) == 0)
 				{
+					printf("---------------------------------------------\n");
+					
+					printf("---------------------------------------------\n");
 					//file code here -- print count and each scheduling info element
 					
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
@@ -89,7 +92,13 @@ int main(int argc, char *argv[]) {
 				ndPtr = list;
 				while (list_isEndNode(ndPtr) == 0)
 				{
+					printf("---------------------------------------------\n");
+					printf("1. Schedule Name : %s (%s)",name,type);
+					printf("\nWhen : %s. %d",month,day);
+					printf("\nWhere : %s\n",place);
+					printf("---------------------------------------------\n");
 					//file code here -- print scheduling info elements matching to the month
+					
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
