@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 				{
 					cnt++;
 					printf("---------------------------------------------\n");
-					printf("%d. Schedule Name : %s (%s)\n",count,name,typeName);
+					printf("%d. Schedule Name : %s (%s)\n",count,name,type_string[MAX_TYPE]);
 					printf("When : %s. %d\n",month,day);
 					printf("\nWhere : %s\n",place);
 					printf("---------------------------------------------\n");
@@ -83,7 +83,8 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
-					//fill code this part - end
+					if(ndPtr==NULL)
+						break;//fill code this part - end
 				}
 				
 				break;
