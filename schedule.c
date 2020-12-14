@@ -85,7 +85,8 @@ void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 {
 	schedInfo_t* schedPtr;
 	
-	//error handler
+	if (schedPtr==NULL)
+		printf("Error!\n");//error handler
 
 	//allocate memory and set the member variables
 	
@@ -119,6 +120,19 @@ char* sched_getPlace(void* obj)
 //convert the name of the type into the enum(integer) value
 int sched_convertType(char* typeName)
 {
-	
-}
+	if (strcmp(typeName, "drama") == 0)
+		return 0;
+	else if (strcmp(typeName, "movie") == 0)
+		return 1;
+	else if (strcmp(typeName, "advertisement") == 0)
+		return 2;
+	else if (strcmp(typeName, "entertainment") == 0)
+		return 3;
+	else if (strcmp(typeName, "meeting") == 0)
+		return 4;
+	else if (strcmp(typeName, "fitness") == 0)
+		return 5;
+	else if (strcmp(typeName, "privacy") == 0)
+		return 6;
+	}
 
