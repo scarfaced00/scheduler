@@ -117,7 +117,9 @@ int main(int argc, char *argv[]) {
 				ndPtr = list;
 				while (list_isEndNode(ndPtr) == 0)
 				{
-					//file code here -- print scheduling info elements matching to the place
+					printf("---------------------------------------------\n");
+					sched_print(ndPtr)
+					printf("---------------------------------------------\n");//file code here -- print scheduling info elements matching to the place
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
@@ -132,13 +134,15 @@ int main(int argc, char *argv[]) {
 				sched_printTypes();
 				printf("your choice : ");
 				scanf("%s", typeName);
-				
-				if (/* fill code here -- convert the type and check if the type is valid */)
+
+				if (sched_convertType(typeName)>=0 && sched_convertType(typeName)<=6)	/* fill code here -- convert the type and check if the type is valid */
 				{
 					ndPtr = list;
 					while (list_isEndNode(ndPtr) == 0)
 					{
-						//file code here -- print scheduling info elements matching to the place
+						printf("---------------------------------------------\n");
+						sched_print(ndPtr)
+						printf("---------------------------------------------\n");//file code here -- print scheduling info elements matching to the place
 						ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 						schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 						
