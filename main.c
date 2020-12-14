@@ -75,9 +75,7 @@ int main(int argc, char *argv[]) {
 				{
 					cnt++;
 					printf("---------------------------------------------\n");
-					printf("%d. Schedule Name : %s (%s)\n",count,name,type_string[MAX_TYPE]);
-					printf("When : %s. %d\n",month,day);
-					printf("\nWhere : %s\n",place);
+					sched_print(ndPtr)
 					printf("---------------------------------------------\n");
 					//file code here -- print count and each scheduling info element
 					
@@ -99,9 +97,7 @@ int main(int argc, char *argv[]) {
 				while (list_isEndNode(ndPtr) == 0)
 				{
 					printf("---------------------------------------------\n");
-					printf("%d. Schedule Name : %s (%s)\n",cnt++,name,typeName);
-					printf("When : %s. %d\n",month_string[i],day);
-					printf("Where : %s\n",place);
+					sched_print(ndPtr)
 					printf("---------------------------------------------\n");
 					//file code here -- print scheduling info elements matching to the month
 					
